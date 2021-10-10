@@ -16,8 +16,8 @@ export class CheckoutDeliveryComponent implements OnInit {
   constructor(private checkoutService: CheckoutService, private basketService: BasketService) { }
 
   ngOnInit(): void {
-    this.checkoutService.getDeliveryMethods().subscribe((db: IDeliveryMethod[]) => {
-      this.deliveryMethods = db;
+    this.checkoutService.getDeliveryMethods().subscribe((deliveryMethods: IDeliveryMethod[]) => {
+      this.deliveryMethods = deliveryMethods;
     }, error => {
       console.log(error);
     }); 
